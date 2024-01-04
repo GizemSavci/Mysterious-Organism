@@ -66,18 +66,31 @@ function pAequorFactory(num, arr){
   }
 };
 
+//Populate 30 instances of the P. Aequor organisms
+const survivingInstances = [];
+let count = 0;
+
+while(count <= 30){
+  const instance = pAequorFactory(count+1, mockUpStrand());
+  if (instance.willLikelySurvive()){
+    survivingInstances.push(instance);
+    count++;
+  }
+}
 
 
+console.log(survivingInstances);
 
-const myAequor = pAequorFactory(1, mockUpStrand());
-console.log(myAequor)
-const anotherAequor = pAequorFactory(2, mockUpStrand());
-myAequor.compareDNA(anotherAequor);
-myAequor.willLikelySurvive();
+//const myAequor = pAequorFactory(1, mockUpStrand());
+//console.log(myAequor)
+//const anotherAequor = pAequorFactory(2, mockUpStrand());
+//myAequor.compareDNA(anotherAequor);
+//myAequor.willLikelySurvive();
 
 
 //Log a newly created instance of P. Aequor
 //console.log(pAequorFactory(1, mockUpStrand()))
+
 
 //const myAequor = pAequorFactory(1, mockUpStrand());
 //myAequor.mutate();
